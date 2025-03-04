@@ -8,11 +8,11 @@ const PORT = 7000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3000" }))
 
 // MongoDB Connection
 
-mongoose.connect('mongodb://localhost:27017/bookstore')
+mongoose.connect('mongodb://localhost:27017/Bookstore')
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log('MongoDB connection error:', err));
 
